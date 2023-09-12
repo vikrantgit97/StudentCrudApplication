@@ -8,8 +8,6 @@ This project demonstrates the implementation of thymeleaf using Spring Boot 3.1.
 
 StudentFormRegistrationApp
 ├── README.md
-├── mvnw
-├── mvnw.cmd
 ├── pom.xml
 ├── src
 │ ├── main
@@ -44,23 +42,7 @@ StudentFormRegistrationApp
 │             └── crudapp
 │                 └── StudentCrudApplicationTests.java
 └── target
-    ├── classes
-    │ ├── application.yml
-    │ ├── com
-    │ │ └── crudapp
-    │ │     ├── StudentCrudApplication.class
-    │ │     ├── controller
-    │ │     │ └── StudentController.class
-    │ │     ├── entity
-    │ │     │ └── Student.class
-    │ │     ├── exception
-    │ │     │ └── StudentNotFoundException.class
-    │ │     ├── repo
-    │ │     │ └── StudentRepository.class
-    │ │     └── service
-    │ │         ├── IStudentService.class
-    │ │         └── impl
-    │ │             └── StudentServiceImpl.class
+    ├
     │ ├── static
     │ │ └── myjs
     │ │     └── spec_validate.js
