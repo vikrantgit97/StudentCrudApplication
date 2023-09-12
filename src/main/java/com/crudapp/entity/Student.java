@@ -22,7 +22,7 @@ public class Student {
 	@Column(name="last_name")
 	private String lastName;
 	
-	@Column(name="mail")
+	@Column(name="email")
 	private String email;
 	
 	@Column(name="address")
@@ -77,5 +77,29 @@ public class Student {
 
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+
+	public Student() {
+	}
+
+	public Student(Long id, String firstName, String lastName, String email, String address, String gender) {
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.address = address;
+		this.gender = gender;
+	}
+
+	@Override
+	public String toString() {
+		return "Student{" +
+				"id=" + id +
+				", firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				", email='" + email + '\'' +
+				", address='" + address + '\'' +
+				", gender='" + gender + '\'' +
+				'}';
 	}
 }
