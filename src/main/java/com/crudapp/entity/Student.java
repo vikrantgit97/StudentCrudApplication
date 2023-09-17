@@ -6,6 +6,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+/**
+ * @author Vikrant on 13-09-2023
+ * @Project StudentRegistrationApplication
+ */
 
 @Entity
 @Table(name="student_tbl")
