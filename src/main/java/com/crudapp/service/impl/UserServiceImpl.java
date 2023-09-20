@@ -3,6 +3,7 @@ package com.crudapp.service.impl;
 import com.crudapp.entity.User;
 import com.crudapp.repo.UserRepository;
 import com.crudapp.service.IUserService;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
@@ -10,6 +11,8 @@ import java.util.Optional;
  * @author Vikrant on 18-09-2023
  * @Project StudentRegistrationApplication
  */
+
+@Service
 public class UserServiceImpl implements IUserService {
 
     private final UserRepository userRepository;

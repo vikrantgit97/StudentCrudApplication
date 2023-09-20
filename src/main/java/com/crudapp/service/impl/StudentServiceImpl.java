@@ -45,4 +45,9 @@ public class StudentServiceImpl implements IStudentService {
 
 	}
 
+	@Override
+	public Student getOneByEmail(String email) {
+		return repo.findByEmail(email).orElseThrow(()->new IllegalArgumentException(" Student Not Found : "+email));
+	}
+
 }

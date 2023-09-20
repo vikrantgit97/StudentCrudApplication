@@ -5,6 +5,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
+import java.util.Objects;
+
 /**
  * @author Vikrant on 13-09-2023
  * @Project StudentRegistrationApplication
@@ -21,13 +24,16 @@ public class User {
     private String displayName;
 
     @Column(name="username")
-    private String username;
+    private String userName;
 
     @Column(name="password")
     private String password;
 
     @Column(name="role")
     private String role;
+
+    public User() {
+    }
 
     public Long getId() {
         return id;
@@ -45,12 +51,12 @@ public class User {
         this.displayName = displayName;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -69,25 +75,27 @@ public class User {
         this.role = role;
     }
 
-    public User() {
-    }
-
-    public User(Long id, String displayName, String username, String password, String role) {
-        this.id = id;
-        this.displayName = displayName;
-        this.username = username;
-        this.password = password;
-        this.role = role;
-    }
-
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", displayName='" + displayName + '\'' +
-                ", username='" + username + '\'' +
+                ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
                 ", role='" + role + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(id, user.id) && Objects.equals(displayName, user.displayName) && Objects.equals(userName, user.userName) && Objects.equals(password, user.password) && Objects.equals(role, user.role);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, displayName, userName, password, role);
     }
 }

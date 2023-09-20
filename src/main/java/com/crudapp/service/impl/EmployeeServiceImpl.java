@@ -3,6 +3,7 @@ package com.crudapp.service.impl;
 import com.crudapp.entity.Employee;
 import com.crudapp.repo.EmployeeRepository;
 import com.crudapp.service.IEmployeeService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -10,6 +11,8 @@ import java.util.List;
  * @author Vikrant on 18-09-2023
  * @Project StudentRegistrationApplication
  */
+
+@Service
 public class EmployeeServiceImpl implements IEmployeeService
 {
 

@@ -4,6 +4,7 @@ import com.crudapp.entity.Teacher;
 import com.crudapp.repo.TeacherRepository;
 import com.crudapp.service.ITeacherService;
 import com.crudapp.utils.ListToMapConverter;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
@@ -12,6 +13,8 @@ import java.util.Map;
  * @author Vikrant on 18-09-2023
  * @Project StudentRegistrationApplication
  */
+
+@Service
 public class TeacherServiceImpl implements ITeacherService {
 
     private final TeacherRepository teacherRepository;

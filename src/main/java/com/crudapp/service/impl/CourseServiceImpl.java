@@ -4,6 +4,7 @@ import com.crudapp.entity.Course;
 import com.crudapp.repo.CourseRepository;
 import com.crudapp.service.ICourseService;
 import com.crudapp.utils.ListToMapConverter;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -12,6 +13,8 @@ import java.util.stream.Collectors;
  * @author Vikrant on 18-09-2023
  * @Project StudentRegistrationApplication
  */
+
+@Service
 public class CourseServiceImpl implements ICourseService {
 
     private final CourseRepository courseRepository;

@@ -3,6 +3,7 @@ package com.crudapp.service.impl;
 import com.crudapp.entity.BatchesRequest;
 import com.crudapp.repo.BatchRequestRepository;
 import com.crudapp.service.IBatchService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ import static com.crudapp.constants.BatchStatus.ACCEPTED;
  * @Project StudentRegistrationApplication
  */
 
+@Service
 public class BatchServiceImpl implements IBatchService {
 
     private final BatchRequestRepository batchRequestRepository;

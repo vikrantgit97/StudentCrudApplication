@@ -4,6 +4,7 @@ import com.crudapp.entity.Institute;
 import com.crudapp.repo.InstituteRepository;
 import com.crudapp.service.IInstituteService;
 import org.springframework.core.SpringVersion;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -11,6 +12,8 @@ import java.util.List;
  * @author Vikrant on 18-09-2023
  * @Project StudentRegistrationApplication
  */
+
+@Service
 public class InstituteServiceImpl implements IInstituteService {
 
     private final InstituteRepository instituteRepository;

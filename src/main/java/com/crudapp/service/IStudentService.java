@@ -12,4 +12,7 @@ public interface IStudentService {
 	public void removeStudent(Long id);
 	public Student getOneStudent(Long id);
 	public void updateStudent(Student student);
+
+	public Student getOneByEmail(String email);
+
 }
