@@ -80,7 +80,7 @@ public class CourseServiceImpl implements ICourseService {
     }
 
     @Override
-    public Map<Long, String> getSpecIdAndName() {
+    public Map<Long, String> getCourseIdAndName() {
         List<Object[]> list = courseRepository.getCourseIdAndName();
         return ListToMapConverter.convertListOfObjectArrayToMap(list);
     }

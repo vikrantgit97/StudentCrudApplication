@@ -31,5 +31,5 @@ public interface ICourseService {
 
     public List<Course> getCoursesList();
 
-    Map<Long, String> getSpecIdAndName();
+    Map<Long, String> getCourseIdAndName();
 }
