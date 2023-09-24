@@ -29,7 +29,7 @@ public class BatchServiceImpl implements IBatchService {
     }
 
     @Override
-    public BatchesRequest getOneSlotRequest(Long id) {
+    public BatchesRequest getOneBatchRequest(Long id) {
         return batchRequestRepository.findById(id).get();
     }
 
@@ -45,12 +45,12 @@ public class BatchServiceImpl implements IBatchService {
     }
 
     @Override
-    public List<BatchesRequest> viewSlotsByStudentMail(String studentMail) {
+    public List<BatchesRequest> viewBatchesByStudentMail(String studentMail) {
         return batchRequestRepository.getAllStudentSlots(studentMail);
     }
 
     @Override
-    public List<BatchesRequest> viewSlotsByTeacherMail(String teacherMail) {
+    public List<BatchesRequest> viewBatchesByTeacherMail(String teacherMail) {
         return batchRequestRepository.getAllTeacherSlots(teacherMail, ACCEPTED.name());
     }
 }

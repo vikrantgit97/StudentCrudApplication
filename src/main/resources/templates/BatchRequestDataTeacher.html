@@ -7,20 +7,20 @@
     <div class="container">
         <div class="card">
             <div class="card-header bg-primary text-center text-white">
-                <h3>SLOT REQUEST FOR DOCTOR : [[${session.userOb.displayName}]]</h3>
+                <h3>BATCH REQUEST FOR TEACHER : [[${session.userOb.displayName}]]</h3>
             </div>
             <div class="card-body">
                 <table class="table table-hover">
                     <tr class="bg-info text-white">
                     	<th> </th>
                         <th>DATE</th>
-                        <th>PATIENT</th>
+                        <th>STUDENT</th>
                         <th>STATUS</th>
                     </tr>
                 	<tr th:each="ob,i:${list}">
                 		<td>[[${i.count}]]</td>
-                    	<td>[[${ob.appointment.date}]]</td>
-                    	<td>[[${ob.patient.firstName +' '+ob.patient.lastName}]]</td>
+                    	<td>[[${ob.institute.date}]]</td>
+                    	<td>[[${ob.student.firstName +' '+ob.student.lastName}]]</td>
                     	<td>
                     	  	[[${ob.status}]]  
                     	</td>

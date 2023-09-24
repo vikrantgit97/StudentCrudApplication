@@ -12,15 +12,15 @@ public interface IBatchService {
     //student can book batch
     Long saveBatchesRequest(BatchesRequest batchesRequest);
     //fetch one
-    BatchesRequest getOneSlotRequest(Long id);
+    BatchesRequest getOneBatchRequest(Long id);
 
     //ADMIN can view all batches
     List<BatchesRequest> getAllBatchesRequests();
     //ADMIN/student can update status
     void updateBatchesRequestStatus(Long id,String status);
     //STUDENT can see his batches
-    List<BatchesRequest> viewSlotsByStudentMail(String studentMail);
+    List<BatchesRequest> viewBatchesByStudentMail(String studentMail);
 
     //TEACHER can see his batches
-    List<BatchesRequest> viewSlotsByTeacherMail(String teacherMail);
+    List<BatchesRequest> viewBatchesByTeacherMail(String teacherMail);
 }

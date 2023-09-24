@@ -24,5 +24,5 @@ public interface IInstituteService {
 
     List<Object[]> getInstitutesByTeacherEmail(String userName);
 
-    void updateSlotCountForInstitute(Long id, int count);
+    void updateBatchCountForInstitute(Long id, int count);
 }

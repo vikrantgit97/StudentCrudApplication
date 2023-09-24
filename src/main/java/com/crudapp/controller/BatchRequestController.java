@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.security.Principal;
 import java.text.SimpleDateFormat;
@@ -79,16 +80,62 @@ public class BatchRequestController {
     public String viewAllRequest(Model model) {
         List<BatchesRequest> allBatchesRequests = batchService.getAllBatchesRequests();
         model.addAttribute("list", allBatchesRequests);
-        return "BatchRequestsData";
+        return "BatchRequestData";
     }
 
     @GetMapping("/student")
-    public String viewMyRequestStudent(Principal principal,
+    public String viewRequestStudent(Principal principal,
                                        Model model) {
         String name = principal.getName();
-        List<BatchesRequest> batchesRequests = batchService.viewSlotsByStudentMail(name);
+        List<BatchesRequest> batchesRequests = batchService.viewBatchesByStudentMail(name);
         model.addAttribute("list", batchesRequests);
         return "BatchRequestDataStudent";
+    }
+
+    @GetMapping("/teacher")
+    public String viewRequestTeacher(Principal principal,
+                                     Model model) {
+        String name = principal.getName();
+        List<BatchesRequest> batchesRequests = batchService.viewBatchesByTeacherMail(name);
+        model.addAttribute("list", batchesRequests);
+        return "BatchRequestDataTeacher";
+    }
+
+    @GetMapping("/accept")
+    public String updateBatchAccept(
+            @RequestParam Long id
+    )
+    {
+        batchService.updateBatchesRequestStatus(id, ACCEPTED.name());
+        BatchesRequest sr = batchService.getOneBatchRequest(id);
+        if(sr.getStatus().equals(ACCEPTED.name())) {
+            instituteService.updateBatchCountForInstitute(
+                    sr.getInstitute().getId(), -1);
+        }
+        return "redirect:all";
+    }
+
+    @GetMapping("/reject")
+    public String updateBatchReject(
+            @RequestParam Long id
+    )
+    {
+        batchService.updateBatchesRequestStatus(id, REJECTED.name());
+        return "redirect:all";
+    }
+
+    @GetMapping("/cancel")
+    public String cancelBatchReject(
+            @RequestParam Long id
+    )
+    {
+        BatchesRequest sr = batchService.getOneBatchRequest(id);
+        if(sr.getStatus().equals(ACCEPTED.name())) {
+            batchService.updateBatchesRequestStatus(id, CANCELLED.name());
+            instituteService.updateBatchCountForInstitute(
+                    sr.getInstitute().getId(), 1);
+        }
+        return "redirect:student";
     }
 
 }

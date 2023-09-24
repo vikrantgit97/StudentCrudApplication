@@ -58,7 +58,7 @@ public class InstituteServiceImpl implements IInstituteService {
     }
 
     @Override
-    public void updateSlotCountForInstitute(Long id, int count) {
+    public void updateBatchCountForInstitute(Long id, int count) {
         instituteRepository.updateBatchCountForInstitute(id, count);
     }
 }
