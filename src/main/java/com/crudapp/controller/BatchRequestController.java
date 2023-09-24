@@ -1,6 +1,5 @@
 package com.crudapp.controller;
 
-import com.crudapp.constants.BatchStatus;
 import com.crudapp.entity.BatchesRequest;
 import com.crudapp.entity.Institute;
 import com.crudapp.entity.Student;
