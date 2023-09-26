@@ -14,5 +14,5 @@ public interface IUserService {
 
     Optional<User> findByUsername(String username);
 
-    void updateUserPwd(String pwd,Integer userId);
+    void updateUserPwd(String pwd,Long userId);
 }

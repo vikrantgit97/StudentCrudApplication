@@ -35,8 +35,8 @@ public class Teacher {
     @Column(name="note")
     private String note;
 
-//    @Column(name="doc_img_col")
-//    private String photoLoc;
+    @Column(name="photo_location")
+    private String photoLoc;
 
     //----------Association Mapping------------------
     @ManyToOne
@@ -107,6 +107,14 @@ public class Teacher {
         this.note = note;
     }
 
+    public String getPhotoLoc() {
+        return photoLoc;
+    }
+
+    public void setPhotoLoc(String photoLoc) {
+        this.photoLoc = photoLoc;
+    }
+
     public Course getCourse() {
         return course;
     }
@@ -118,7 +126,7 @@ public class Teacher {
     public Teacher() {
     }
 
-    public Teacher(Long id, String firstName, String lastName, String email, String address, String gender, String mobile, String note, Course course) {
+    public Teacher(Long id, String firstName, String lastName, String email, String address, String gender, String mobile, String note, String photoLoc, Course course) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -127,6 +135,7 @@ public class Teacher {
         this.gender = gender;
         this.mobile = mobile;
         this.note = note;
+        this.photoLoc = photoLoc;
         this.course = course;
     }
 
@@ -141,6 +150,7 @@ public class Teacher {
                 ", gender='" + gender + '\'' +
                 ", mobile='" + mobile + '\'' +
                 ", note='" + note + '\'' +
+                ", photoLoc='" + photoLoc + '\'' +
                 ", course=" + course +
                 '}';
     }

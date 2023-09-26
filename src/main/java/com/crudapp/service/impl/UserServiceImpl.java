@@ -32,7 +32,7 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public void updateUserPwd(String pwd, Integer userId) {
+    public void updateUserPwd(String pwd, Long userId) {
 
     }
 
