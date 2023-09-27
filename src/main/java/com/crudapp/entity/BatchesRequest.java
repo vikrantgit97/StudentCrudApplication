@@ -28,7 +28,7 @@ public class BatchesRequest {
     @JoinColumn(name = "student_id_fk")
     private Student student;
 
-    @Column(name = "slot_status")
+    @Column(name = "batch_status")
     private String status;
 
     public Long getId() {
