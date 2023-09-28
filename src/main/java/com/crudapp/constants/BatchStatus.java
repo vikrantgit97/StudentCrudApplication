@@ -6,5 +6,9 @@ package com.crudapp.constants;
  */
 public enum BatchStatus {
 
-    PENDING, ACCEPTED, REJECTED, CANCELLED
+    PENDING,
+    ACCEPTED,
+    REJECTED,
+    CANCELLED
+
 }

@@ -6,5 +6,8 @@ package com.crudapp.constants;
  */
 public enum UserRoles {
 
-    STUDENT, ADMIN, TEACHER;
+    STUDENT,
+    ADMIN,
+    TEACHER;
+
 }
